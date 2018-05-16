@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 var path = require("path");
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/AngularApp/dist/AngularApp'));
+app.use(express.static(__dirname + '/Angula/dist/Angular'));
 
 //mongoose
 require("./server/config/mongoose");
