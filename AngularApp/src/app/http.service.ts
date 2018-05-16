@@ -1,9 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
+
+  allAuthors() {
+    return this._http.get('/authors');
+  }
+
+  addAuthor(newAuthor) {
+    return this._http.post('/authors', newAuthor);
+  }
+
+  editAuthor(id: string, updatedAuthor) {
+    return this._http.post(`/authors/${id}`, updatedAuthor);
+  }
+
+  deleteAuthor(destroyedAuthor) {
+    return this._http.post(`/authors/remove/${destroyedAuthor._id}`, destroyedAuthor);
+  }
 }

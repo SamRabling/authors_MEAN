@@ -1,7 +1,7 @@
-const mongoose = requier("mongoose");
+const mongoose = require("mongoose");
 
 const AuthorSchema = new mongoose.Schema({
     name: { type: String, required: true, minlength: 5}
 })
 
-mongoose.model('task', TaskSchema)
+mongoose.model('author', AuthorSchema)
