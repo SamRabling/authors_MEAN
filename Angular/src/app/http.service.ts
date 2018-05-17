@@ -21,6 +21,10 @@ export class HttpService {
     return this._http.post(`/authors/${id}`, updatedAuthor);
   }
 
+  oneAuthor(id: string) {
+  return this._http.get(`/authors/${id}`);
+  }
+
   deleteAuthor(id: string, destroyedAuthor) {
     return this._http.post(`/authors/remove/${id}`, destroyedAuthor);
   }
