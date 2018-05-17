@@ -3,7 +3,7 @@
 <h3>Edit this author:</h3>
 <form (submit)="editAuthor()">
   Author's Name:
-  <input type="text" name="editAuthor['name']" [(ngModel)]="edit_author['name']" value="{{edit_author.name}}"/>
+  <input type="text" name="editAuthor['name']" [(ngModel)]="edit_author['name']"/>
   <input type="submit" value="Edit Author" >
   <button [routerLink]="['/']">Cancel</button>
 </form>

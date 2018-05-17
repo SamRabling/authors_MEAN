@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditComponent implements OnInit {
   edit_author = {name: ''};
   id: string;
-  private author_params: any;
+  author_params: any;
 
   constructor(
     private _httpService: HttpService,
