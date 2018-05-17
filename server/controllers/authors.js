@@ -13,6 +13,7 @@ module.exports = {
     },
 
     new: function (req, res) {
+        console.log(req.body.name);
         var author = new Author({
             name: req.body.name
         });

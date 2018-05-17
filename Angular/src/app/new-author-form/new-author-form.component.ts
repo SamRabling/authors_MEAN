@@ -14,10 +14,11 @@ export class NewAuthorFormComponent implements OnInit {
   constructor(private _httpService: HttpService, private _router: Router) { }
 
   ngOnInit() {
-    this.newAuthor = {name: ''};
+    this.newAuthor = {name: '' };
   }
 
   addAuthor() {
+    console.log(this.newAuthor);
     const observable = this._httpService.addAuthor(this.newAuthor);
     observable.subscribe(data => {
       console.log('new author', data);

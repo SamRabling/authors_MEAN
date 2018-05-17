@@ -1,14 +1,15 @@
 <h5>We have quotes by the following authors:</h5>
 
-<table *ngFor = "let author of authors">
+<table>
   <tr>
     <th>Author</th>
     <th>Actions Available</th>
   </tr>
-  <tr>
-    <td>{{author.name}}}</td>
-  </tr>
-  <tr>
-    <td><button>Edit </button> <button>Delete </button></td>
+  <tr *ngFor = "let author of authors">
+    <td>{{author.name}}</td>
+    <td>
+      <button>Edit </button>
+      <button>Delete </button>
+    </td>
   </tr>
 </table>
