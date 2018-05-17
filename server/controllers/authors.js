@@ -27,7 +27,9 @@ module.exports = {
     },
 
     update: function (req, res) {
+        console.log("got data");
         Author.findByIdAndUpdate({_id: req.params.id}, function (err, author){
+            console.log("got data");
             if (err) {
                 res.json({ status: false, data: err });
             } else {
@@ -39,6 +41,17 @@ module.exports = {
                         res.json({ status: true, data: updatedAuthor });
                     }
                 });
+            }
+        });
+    },
+
+    show: function (req, res, err) {
+        var id = req.params.id
+        Author.findOne({ _id: id }, function (err, author) {
+            if (err) {
+                res.json({ status: false, data: err });
+            } else {
+                res.json({ status: true, data: author });
             }
         });
     },
