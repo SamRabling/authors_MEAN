@@ -26,6 +26,7 @@ export class IndexComponent implements OnInit {
   }
 
     removeAuthor(id: string) {
+      console.log(id);
       const observable = this._httpService.deleteAuthor(id);
       observable.subscribe(data => {
         console.log('delete task', data);

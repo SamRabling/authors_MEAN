@@ -20,7 +20,7 @@ export class HttpService {
     return this._http.post(`/authors/${id}`, updatedAuthor);
   }
 
-  deleteAuthor(destroyedAuthor) {
-    return this._http.post(`/authors/remove/${destroyedAuthor._id}`, destroyedAuthor);
+  deleteAuthor(id: string, destroyedAuthor) {
+    return this._http.post(`/authors/remove/${id}`, destroyedAuthor);
   }
 }
