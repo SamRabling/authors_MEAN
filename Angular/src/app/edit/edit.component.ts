@@ -25,6 +25,11 @@ export class EditComponent implements OnInit {
   );
   }
 
+  oneAuthor(id: string) {
+    const observable = this._httpService.oneAuthor(id);
+    observable.subscribe(data => this.edit_author = data['data']);
+  }
+
   editAuthor() {
     const observable = this._httpService.editAuthor(this.id, this.edit_author);
       console.log(this.id);

@@ -17,7 +17,7 @@ export class HttpService {
   }
 
   editAuthor(id: string, updatedAuthor) {
-    console.log('got data', updatedAuthor);
+    console.log('got data service', id);
     return this._http.post(`/authors/${id}`, updatedAuthor);
   }
 

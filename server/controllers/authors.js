@@ -26,17 +26,17 @@ module.exports = {
         });
     },
 
-    update: function (req, res) {
-        console.log("got data");
-        Author.findByIdAndUpdate({_id: req.params.id}, function (err, author){
-            console.log("got data");
+    update: function (req, res, err) {
+        Author.findById({_id: req.params.id}, function (err, author){
             if (err) {
                 res.json({ status: false, data: err });
             } else {
                 author.name = req.body.name
+                console.log(req.body.name);
                 author.save(function (err, updatedAuthor){
                     if (err) {
                         res.json({ status: false, data: err });
+                        console.log(err);
                     } else {
                         res.json({ status: true, data: updatedAuthor });
                     }
