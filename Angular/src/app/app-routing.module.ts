@@ -8,7 +8,7 @@ import { NewAuthorFormComponent } from './new-author-form/new-author-form.compon
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: IndexComponent},
   { path: 'authors/new', component: NewAuthorFormComponent },
-  { path: 'authors/edit', component: EditComponent }
+  { path: 'authors/edit/:id', component: EditComponent }
 
 ];
 
